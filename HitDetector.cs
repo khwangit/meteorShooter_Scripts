@@ -2,10 +2,19 @@
 using System.Collections;
 
 public class HitDetector : MonoBehaviour {
-	void OnTriggerEnter(Collider other){
+
+	public GameObject meteor;
+	public Vector3 pos;
+
+	void OnTriggerEnter (Collider other){
 		if (other.gameObject.tag == "target") {
 			Debug.Log ("hit");
-			Destroy (other.gameObject);
+			pos = new Vector3 (Random.Range(10,20), Random.Range(10,20), Random.Range(10,20));
+			Debug.Log (meteor.transform.position);
+			Debug.Log (pos);
+			meteor.transform.position = pos;
+			Debug.Log (meteor.transform.position);
+			//Destroy (other.gameObject);
 		}
 	}
 }
