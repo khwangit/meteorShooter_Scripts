@@ -17,6 +17,5 @@ public class Rotate : MonoBehaviour {
 	void Update () 
 	{
 		this.transform.Rotate(new Vector3(dirx*speed, diry*speed, dirz*speed));
-		//Debug.Log (dirx);
 	}
 }
