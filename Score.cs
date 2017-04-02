@@ -7,6 +7,7 @@ public class Score : MonoBehaviour {
 	public float score;
 	public TextMesh scoreT;
 	public GameObject explotion;
+	public GameObject rota;
 
 	public void awake(){
 		score = 0;
@@ -16,9 +17,11 @@ public class Score : MonoBehaviour {
 		score = score+1;
 		scoreT.text = score.ToString(); 
 		Instantiate (explotion, transform.position, transform.rotation);
+		GetComponent<AudioSource>().PlayOneShot(st, 1);
+		rota.SetActive (false);
 		transform.position = new Vector3 (0, 0, 0);
 		transform.rotation = Random.rotation;
 		transform.position = transform.forward * Random.Range (20, 30);
-		GetComponent<AudioSource>().PlayOneShot(st, 1);
+		rota.SetActive (true);
 	}
 }

@@ -7,8 +7,8 @@ public class Rotate : MonoBehaviour {
 	private float diry;
 	private float dirz;
 
-	void Awake (){
-		speed = Random.Range (1f, 2f);
+	void OnEnable (){
+		speed = Random.Range (2f, 7f);
 		dirx = Random.Range (-1f, 1f);
 		diry = Random.Range (-1f, 1f);
 		dirz = Random.Range (-1f, 1f);
