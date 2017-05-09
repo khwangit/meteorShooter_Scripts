@@ -9,6 +9,8 @@ public class HomingTest : MonoBehaviour {
 	public GameObject meteor;
 	public GameObject restart;
 	public GameObject yScore;
+	public GameObject hScore;
+	public GameObject hScoreT;
 	public GameObject cam;
 
 
@@ -25,6 +27,8 @@ public class HomingTest : MonoBehaviour {
 			meteor.SetActive (false);
 			restart.SetActive (true);
 			yScore.SetActive (true);
+			hScore.SetActive (true);
+			hScoreT.SetActive (true);
 
 			restart.transform.rotation = cam.transform.rotation;
 		}

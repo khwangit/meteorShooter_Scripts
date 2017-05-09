@@ -9,8 +9,17 @@ public class Score : MonoBehaviour {
 	public GameObject explotion;
 	public GameObject rota;
 
+	private float hScore;
+	public TextMesh HscoreT;
+
 	public void awake(){
 		score = 0;
+
+		if (PlayerPrefs.HasKey ("HighScore")) {
+			hScore = PlayerPrefs.GetFloat ("HighScore");
+		} else {
+			PlayerPrefs.SetFloat ("HighScore", 0);
+		}
 	}
 
 	public void OnTarget (){
@@ -23,5 +32,9 @@ public class Score : MonoBehaviour {
 		transform.rotation = Random.rotation;
 		transform.position = transform.forward * Random.Range (20, 30);
 		rota.SetActive (true);
+		if (score > PlayerPrefs.GetFloat("HighScore")){
+			PlayerPrefs.SetFloat ("HighScore", score);
+		}
+		HscoreT.text = PlayerPrefs.GetFloat ("HighScore").ToString ();
 	}
 }
